@@ -1,19 +1,14 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="rbates"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_LS_COLORS="true"
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+plugins=(git bundler brew gem rbates)
 
-# Customize to your needs...
+export PATH="/usr/local/bin:$PATH"
+export EDITOR='mate -w'
 
-# Install Autojump
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+source $ZSH/oh-my-zsh.sh
 
-# Turn off autocorrect
-unsetopt correct_all
+# for Homebrew installed rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

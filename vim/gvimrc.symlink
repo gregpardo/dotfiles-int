@@ -1,9 +1,6 @@
- set guioptions-=T " Remove Toolbar
- set guioptions-=m " Remove Menubar
- set guioptions+=c " Use console vs popups
- set guioptions-=r " Don't always show vertical scrollbar
- set guioptions-=L " Disable left hand scrollbar
+set guioptions-=T " hide toolbar
+set lines=55 columns=100
 
- set guifont=PragmataPro\ for\ Powerline
- set background=light
- colorscheme solarized
+colorscheme railscasts
+
+set guifont=DejaVu\ Sans\ Mono:h13
