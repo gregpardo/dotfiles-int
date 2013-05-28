@@ -1,0 +1,18 @@
+[user]
+	name = Greg Pardo
+	email = gregpardo@gmail.com
+[alias]
+ 	co = checkout
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+  grep = auto
+[include]
+    path = .gitconfig-private
+[rerere]
+	enabled = 1

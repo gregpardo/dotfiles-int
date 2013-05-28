@@ -1,0 +1,142 @@
+set nocompatible " essential
+filetype off     " required!
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'juvenn/mustache.vim'
+Bundle 'AndrewRadev/switch.vim'
+Bundle 'godlygeek/tabular'
+
+syntax enable
+filetype plugin indent on
+
+" Color Scheme
+set background=dark
+colorscheme solarized
+
+" Type
+set guifont=PragmataPro\ for\ Powerline:h13
+set antialias
+set linespace=2
+
+" Use shared tmp folder for buffers
+set directory=$HOME/tmp//
+
+" Set <leader>
+let mapleader=","
+
+" Fixes backspace
+set backspace=indent,eol,start
+
+" --- vim-powerline ---
+set laststatus=2
+set t_Co=256 " explicit 256 color support
+let g:Powerline_symbols = 'fancy'
+
+" vim-syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+
+" --- ctrlp.vim ---
+
+" Use Peepopen shortcut
+nnoremap <silent> <leader>p :CtrlP<CR> 
+
+" Use Git to list files
+" let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+
+" Open selected files in new tab by default
+let g:ctrlp_open_new_file = 'v'
+
+" Ignore these files/folders 
+let g:ctrlp_custom_ignore = { 'dir': '\.git$\|\.bundle$\|\.sass-cache$\|bin$\|tmp$\|log$\|doc$\|vendor\/bundle$',
+                            \ 'file': '(\.sassc|\.DS_Store|\.swp|\.jpe?g|\.png|\.swp|\.swo)$',
+                            \ 'link': '' }
+
+" --- NERDtree ---
+" Open with ctrl-t
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+
+" --- Folds ---
+set foldlevel=1
+set foldcolumn=3
+set foldnestmax=2
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+" Indenting
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set autoindent
+set smartindent
+
+" Bracket Matching
+set showmatch
+set matchtime=2
+
+" Lines & Columns
+set ruler
+set number
+set cursorline
+
+" Hightlighted Search
+set hlsearch
+
+" Soft/Hard Wrapping
+set nowrap
+set textwidth=80
+set formatoptions=qrn1
+
+" 80th column mark
+set cc=76
+
+" Disable Spell Checking
+set nospell
+
+
+" Handle other filetypes
+au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.rabl set filetype=ruby
+au BufRead,BufNewFile *.hamlc set filetype=haml
+
+" Explicit syntax for some files
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Guardfile set filetype=ruby
+
+" Shift-return to escape
+inoremap <S-CR> <ESC>
+
+" Quicker command mode
+nnoremap ; :
+
+" Make Y consistent with D and C
+map Y           y$
+
+set splitright                  " Add new windows towards the right
+set splitbelow                  " ... and bottom
+set scrolloff=3                 " Scroll when the cursor is 3 lines from edge"
+set autoread                    " No prompt for file changes outside Vim"
+
+autocmd BufReadPre //* :NoMatchParen
