@@ -7,10 +7,13 @@ plugins=(git bundler brew gem rbates)
 export PATH="/usr/local/bin:$PATH"
 
 # Customize to your needs...
-[ -f ./.set-osx-defaults ] && source ./.set-osx-defaults
+#[ -f ./.set-osx-defaults ] && source ./.set-osx-defaults
 
 # Turn off autocorrect
 unsetopt correct_all
 
 # Boxer for Intelity
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+# Get parameters working for rake
+alias rake='noglob rake'
