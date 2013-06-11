@@ -17,3 +17,6 @@ unsetopt correct_all
 
 # Get parameters working for rake
 alias rake='noglob rake'
+
+# Change zsh prompt
+PROMPT='%n in %d: '
