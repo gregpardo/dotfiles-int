@@ -53,3 +53,6 @@ export PATH=$PATH:bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/rbe
 
 # Get parameters working for rake
 alias rake='noglob rake'
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/greg/.gvm/bin/gvm-init.sh" ]] && source "/Users/greg/.gvm/bin/gvm-init.sh"
