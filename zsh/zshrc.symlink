@@ -40,7 +40,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler brew gem rbates autojump cake cap coffee git-extras git-flow node npm osx rails3 sublime web-search)
+plugins=(git bundler brew gem rbates autojump cake cap coffee git-extras git-flow node npm osx rails sublime web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,3 +60,4 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 export PATH="/Applications/activator-1.0.0:$PATH"
+export GOPATH="/Users/greg/src/gocode"
