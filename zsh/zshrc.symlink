@@ -56,10 +56,14 @@ export PATH=$PATH:/Users/greg/.npm-packages/bin
 # Get parameters working for rake
 alias rake='noglob rake'
 
+alias j='jump'
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/greg/.gvm/bin/gvm-init.sh" ]] && source "/Users/greg/.gvm/bin/gvm-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+source `jump-bin --zsh-integration`
 
 export PATH="/Applications/activator-1.0.0:$PATH"
 export GOPATH="/Users/greg/src/gocode"
