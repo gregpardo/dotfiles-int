@@ -40,13 +40,15 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler brew gem rbates autojump cake cap coffee git-extras git-flow node npm osx rails sublime web-search)
+plugins=(git bundler brew gem rbates autojump cake cap coffee git-extras git-flow node npm osx rails sublime web-search pod rand-quote redis-cli pip gnu-utils command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR='vim'
+
 # Customize to your needs...
 export PATH=$PATH:bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/rbenv/plugins/ruby-build/bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-
+export PATH=$PATH:/Users/greg/.npm-packages/bin
 
 # Boxer for Intelity
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
@@ -61,3 +63,4 @@ eval "$(jenv init -)"
 
 export PATH="/Applications/activator-1.0.0:$PATH"
 export GOPATH="/Users/greg/src/gocode"
+
